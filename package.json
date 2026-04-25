@@ -1,0 +1,69 @@
+{
+  "name": "pixel-grid-react",
+  "version": "0.1.0",
+  "description": "React component for the animated 3px-grid indicator",
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./pixel-grid.css": "./dist/pixel-grid.css"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css",
+    "src/**"
+  ],
+  "scripts": {
+    "build": "bun run build:js && bun run build:types && cp src/pixel-grid.css dist/",
+    "build:js": "bun build src/index.ts --outdir dist --target browser --external react --external react-dom",
+    "build:types": "tsc -p tsconfig.build.json",
+    "test": "bun test",
+    "prepublishOnly": "bun run build",
+    "dev": "bun --hot index.ts"
+  },
+  "keywords": [
+    "react",
+    "pixel-grid",
+    "loading-indicator",
+    "animation",
+    "3x3-grid",
+    "micro-animation",
+    "spinner",
+    "loader"
+  ],
+  "author": "xpriori",
+  "license": "MIT",
+  "homepage": "https://github.com/phtn/pixel-grid-react",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phtn/pixel-grid-react"
+  },
+  "bugs": {
+    "url": "https://github.com/phtn/pixel-grid-react/issues"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.2",
+    "@types/bun": "latest",
+    "@types/jsdom": "^28.0.1",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "jsdom": "^29.0.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "typescript": "^5"
+  }
+}

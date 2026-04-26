@@ -1,6 +1,6 @@
 {
-  "name": "pixel-grid-react",
-  "version": "0.1.0",
+  "name": "three-px-react",
+  "version": "0.1.1",
   "description": "React component for the animated 3px-grid indicator",
   "type": "module",
   "module": "dist/index.js",
@@ -43,7 +43,7 @@
   "homepage": "https://github.com/phtn/pixel-grid-react",
   "repository": {
     "type": "git",
-    "url": "https://github.com/phtn/pixel-grid-react"
+    "url": "git+https://github.com/phtn/pixel-grid-react.git"
   },
   "bugs": {
     "url": "https://github.com/phtn/pixel-grid-react/issues"

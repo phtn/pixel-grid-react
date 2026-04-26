@@ -1,4 +1,4 @@
-# pixel-grid-react
+# three-px-react · `npm install three-px-react`
 
 A React component for the 3×3 animated pixel grid indicator — a tiny, expressive loading signal driven by delay arrays. Zero external dependencies, full TypeScript support, under 10 KB.
 
@@ -19,11 +19,11 @@ A React component for the 3×3 animated pixel grid indicator — a tiny, express
 ## Installation
 
 ```sh
-npm install pixel-grid-react
+npm install three-px-react
 # or
-yarn add pixel-grid-react
+yarn add three-px-react
 # or
-bun add pixel-grid-react
+bun add three-px-react
 ```
 
 ---
@@ -31,7 +31,7 @@ bun add pixel-grid-react
 ## Quick start
 
 ```tsx
-import { PixelGrid } from 'pixel-grid-react';
+import { PixelGrid } from 'three-px-react';
 
 export function App() {
   return <PixelGrid />;
@@ -172,7 +172,7 @@ Pass an `AnimationConfig` object instead of a preset name to define your own pat
 ```
 
 ```tsx
-import { PixelGrid, type AnimationConfig } from 'pixel-grid-react';
+import { PixelGrid, type AnimationConfig } from 'three-px-react';
 
 const pulse: AnimationConfig = {
   name: 'pulse',
@@ -214,7 +214,7 @@ const config = useMemo<AnimationConfig>(() => ({
 ## Utilities
 
 ```ts
-import { ANIMATIONS, getAnimationNames } from 'pixel-grid-react';
+import { ANIMATIONS, getAnimationNames } from 'three-px-react';
 
 // All 24 preset configs as a record
 console.log(ANIMATIONS['spiral-cw']); // { name, delays, duration }
@@ -235,7 +235,7 @@ import type {
   AnimationConfig, // { name, delays, duration, colors? }
   ColorName,       // union of all 12 named colors
   PixelGridProps,  // component props interface
-} from 'pixel-grid-react';
+} from 'three-px-react';
 ```
 
 ---

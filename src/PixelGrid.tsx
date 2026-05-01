@@ -3,8 +3,10 @@ import { ANIMATIONS } from './animations.ts';
 import type { AnimationConfig, AnimationName, PixelGridProps } from './types.ts';
 
 const STYLES = `.pixel-grid{display:grid;grid-template-columns:repeat(3,3px);grid-template-rows:repeat(3,3px);gap:1px}
-.pixel-grid__cell{background-color:var(--pixel-off);box-shadow:none;border-radius:1px;transition:background-color 300ms ease-out,box-shadow 300ms ease-out}
-.pixel-grid__cell.is-on{background-color:var(--pixel-on);box-shadow:0 0 3px var(--pixel-glow),0 0 6px var(--pixel-glow)}
+.pixel-grid__cell{background-color:var(--pixel-off);box-shadow:none;border-radius:0;transition:background-color 200ms ease-out,box-shadow 200ms ease-out}
+.pixel-grid__cell.is-on{background-color:var(--pixel-on)}
+.pixel-grid--bloom .pixel-grid__cell{border-radius:1px}
+.pixel-grid--bloom .pixel-grid__cell.is-on{box-shadow:0 0 3px var(--pixel-glow),0 0 6px var(--pixel-glow)}
 :root{--pixel-off:oklch(35% 0.04 195/0.5);--pixel-on:oklch(85% 0.15 195);--pixel-glow:oklch(75% 0.18 195/0.8)}
 .pixel-grid--cyan{--pixel-off:oklch(40% 0.08 195/0.4);--pixel-on:oklch(90% 0.2 195);--pixel-glow:oklch(80% 0.25 195/0.9)}
 .pixel-grid--magenta{--pixel-off:oklch(40% 0.08 330/0.4);--pixel-on:oklch(85% 0.25 330);--pixel-glow:oklch(75% 0.3 330/0.9)}
@@ -221,6 +223,7 @@ export function PixelGrid({
 
   const containerClassName = [
     'pixel-grid',
+    bloom ? 'pixel-grid--bloom' : null,
     color && !isHex(color) ? `pixel-grid--${color}` : null,
     className,
   ]

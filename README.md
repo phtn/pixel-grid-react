@@ -49,7 +49,7 @@ Styles are injected automatically. No CSS import needed.
 | `animation` | `AnimationName \| AnimationConfig` | `"wave-lr"` | Preset name or custom animation object |
 | `playing` | `boolean` | `true` | Start or stop the animation |
 | `color` | `ColorName \| string` | — | Override the grid color. Named value or hex (`"#ff6b6b"`) |
-| `bloom` | `boolean \| number` | `false` | Enable glow bloom. Pass a number to control blur radius (default `4`) |
+| `bloom` | `boolean \| number` | `false` | Enable glow bloom. When off, cells stay hard-edged for a sharper pixel look. Pass a number to control blur radius (default `4`) |
 | `className` | `string` | — | Extra class names on the container |
 | `style` | `CSSProperties` | — | Inline styles on the container |
 
@@ -147,7 +147,7 @@ function LoadingButton({ isLoading }: { isLoading: boolean }) {
 
 ## Bloom effect
 
-The `bloom` prop adds an SVG-based glow filter, creating a neon-light feel.
+By default, the grid renders as hard-edged pixels for maximum sharpness. The `bloom` prop adds an SVG-based glow filter plus a softer cell glow when you want a neon-light feel.
 
 ```tsx
 // Default bloom intensity

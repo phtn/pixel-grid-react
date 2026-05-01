@@ -12,14 +12,21 @@
 .pixel-grid__cell {
   background-color: var(--pixel-off);
   box-shadow: none;
-  border-radius: 1px;
+  border-radius: 0;
   transition:
-    background-color 300ms ease-out,
-    box-shadow 300ms ease-out;
+    background-color 200ms ease-out,
+    box-shadow 200ms ease-out;
 }
 
 .pixel-grid__cell.is-on {
   background-color: var(--pixel-on);
+}
+
+.pixel-grid--bloom .pixel-grid__cell {
+  border-radius: 1px;
+}
+
+.pixel-grid--bloom .pixel-grid__cell.is-on {
   box-shadow:
     0 0 3px var(--pixel-glow),
     0 0 6px var(--pixel-glow);

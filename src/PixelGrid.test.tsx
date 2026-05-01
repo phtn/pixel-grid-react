@@ -28,6 +28,24 @@ describe('PixelGrid', () => {
     });
   });
 
+  describe('bloom', () => {
+    test('does not add bloom class by default', () => {
+      const { container } = render(<PixelGrid />);
+      expect(container.firstElementChild?.classList.contains('pixel-grid--bloom')).toBe(false);
+    });
+
+    test('adds bloom class when bloom is enabled', () => {
+      const { container } = render(<PixelGrid bloom />);
+      expect(container.firstElementChild?.classList.contains('pixel-grid--bloom')).toBe(true);
+    });
+
+    test('applies bloom filter when bloom is enabled', () => {
+      const { container } = render(<PixelGrid bloom={6} />);
+      const el = container.firstElementChild as HTMLElement;
+      expect(el.style.filter).toContain('pg-bloom-');
+    });
+  });
+
   describe('color', () => {
     test('applies named color class to container', () => {
       const { container } = render(<PixelGrid color="magenta" />);
@@ -103,6 +121,7 @@ describe('PixelGrid', () => {
       render(<PixelGrid />);
       const content = document.getElementById('pixel-grid-styles')?.textContent ?? '';
       expect(content).toContain('.pixel-grid');
+      expect(content).toContain('.pixel-grid--bloom');
       expect(content).toContain('.pixel-grid__cell');
     });
 

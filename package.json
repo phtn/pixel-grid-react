@@ -1,6 +1,6 @@
 {
   "name": "three-px-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React component for the animated 3px-grid indicator",
   "type": "module",
   "module": "dist/index.js",

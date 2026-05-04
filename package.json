@@ -1,6 +1,6 @@
 {
   "name": "three-px-react",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "React component for the animated 3px-grid indicator",
   "type": "module",
   "module": "dist/index.js",
@@ -21,9 +21,10 @@
     "src/**"
   ],
   "scripts": {
-    "build": "bun run build:js && bun run build:types && cp src/pixel-grid.css dist/",
-    "build:js": "bun build src/index.ts --outdir dist --target browser --external react --external react-dom",
+    "build": "bun run build:js && bun run build:types && cp src/pixel-grid.css dist/ && bun run verify:dist",
+    "build:js": "NODE_ENV=production bun build src/index.ts --outdir dist --target browser --external react --external react-dom",
     "build:types": "tsc -p tsconfig.build.json",
+    "verify:dist": "bun run scripts/verify-dist.ts",
     "test": "bun test",
     "prepublishOnly": "bun run build",
     "dev": "bun --hot index.ts"
